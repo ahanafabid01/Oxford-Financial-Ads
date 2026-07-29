@@ -37,11 +37,12 @@ const Home = () => {
     fetchStats();
   }, []);
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <>
       <Navbar />
       <div id="home">
         <Hero />
       </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <ExecutiveSummary />
       <div className="flex justify-center my-8 md:my-12">
         <img
@@ -104,7 +105,8 @@ const Home = () => {
         reversed
       />
       <Footer />
-    </div>
+      </div>
+    </>
   );
 };
 
