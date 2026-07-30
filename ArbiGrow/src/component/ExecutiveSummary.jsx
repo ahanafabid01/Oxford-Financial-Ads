@@ -1,21 +1,16 @@
 import { motion } from "framer-motion";
-import { useInView } from 'react-intersection-observer';
 import { useTranslation } from "react-i18next";
 
 export default function ExecutiveSummary() {
   const { t } = useTranslation();
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.2
-  });
 
   return (
-    <section ref={ref} className="py-20 px-2 sm:px-4">
+    <section className="py-20 px-2 sm:px-4">
       <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
           className="relative p-6 sm:p-10 md:p-14 rounded-[2.5rem] bg-gradient-to-br from-white/[0.04] to-white/[0.01] backdrop-blur-2xl border border-white/[0.08] shadow-2xl overflow-hidden group"
         >
           {/* Subtle animated background glow */}
