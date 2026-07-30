@@ -89,7 +89,7 @@ const Home = () => {
         <WhyChooseUs />
       </div>
       <MemberBenefits />
-            {stats && <PlatformStatistics stats={stats} />}
+      <PlatformStatistics />
       <div id="founders">
         <Founders />
       </div>
