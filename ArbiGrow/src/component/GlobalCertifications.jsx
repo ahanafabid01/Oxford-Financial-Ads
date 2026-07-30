@@ -14,7 +14,7 @@ import {
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
 
-export function GlobalCertifications() {
+export function GlobalCertifications({ children }) {
   const { t } = useTranslation();
   const [showCertModal, setShowCertModal] = useState(false);
   const certifications = [
@@ -139,6 +139,8 @@ export function GlobalCertifications() {
             </motion.div>
           ))}
         </div>
+
+        {children}
 
         {/* Trust Statement + Document Downloads */}
         <motion.div

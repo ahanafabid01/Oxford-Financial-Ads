@@ -115,25 +115,33 @@ const Home = () => {
       </div>
 
       <div id="certifications">
-        <GlobalCertifications />
+        <GlobalCertifications>
+          <ShowcaseSection
+            badge={t("showcase.events.badge")}
+            badgeIcon={PartyPopper}
+            title={t("showcase.events.title")}
+            description={t("showcase.events.description")}
+            images={eventImages}
+            imageAlt={t("homePage.imageAlt")}
+          />
+        </GlobalCertifications>
       </div>
       <div id="security">
         <SecurityStandards />
       </div>
+
+      <ShowcaseSection
+        badge={t("showcase.training.badge")}
+        badgeIcon={GraduationCap}
+        title={t("showcase.training.title")}
+        description={t("showcase.training.description")}
+        images={trainingImages}
+        imageAlt={t("homePage.imageAlt")}
+      />
       <div id="corporate">
         <CorporateIntegrity />
       </div>
-      <div id="privacy">
-        <PrivacySecurity />
-      </div>
-      <ShowcaseSection
-        badge={t("showcase.events.badge")}
-        badgeIcon={PartyPopper}
-        title={t("showcase.events.title")}
-        description={t("showcase.events.description")}
-        images={eventImages}
-        imageAlt={t("homePage.imageAlt")}
-      />
+
       <ShowcaseSection
         badge={t("showcase.community.badge")}
         badgeIcon={Users}
@@ -143,14 +151,12 @@ const Home = () => {
         imageAlt={t("homePage.imageAlt")}
         reversed
       />
-      <ShowcaseSection
-        badge={t("showcase.training.badge")}
-        badgeIcon={GraduationCap}
-        title={t("showcase.training.title")}
-        description={t("showcase.training.description")}
-        images={trainingImages}
-        imageAlt={t("homePage.imageAlt")}
-      />
+      <div id="privacy">
+        <PrivacySecurity />
+      </div>
+
+
+
       <ShowcaseSection
         badge={t("showcase.life.badge")}
         badgeIcon={Briefcase}
