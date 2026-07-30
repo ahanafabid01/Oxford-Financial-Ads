@@ -26,13 +26,13 @@ export function ShowcaseSection({ badge, title, description, image, images, imag
       </div>
 
       <div className={`relative z-10 flex flex-col ${reversed ? "lg:flex-row-reverse" : "lg:flex-row"} items-center gap-6 sm:gap-8 lg:gap-12`}>
-        <div className="flex-1 w-full">
+        <div className="flex-1 w-full flex flex-col justify-center">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border border-blue-500/20 text-xs uppercase tracking-[0.2em] text-cyan-400 font-semibold mb-4 sm:mb-5"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border border-blue-500/20 text-xs uppercase tracking-[0.2em] text-cyan-400 font-semibold mb-6 w-fit"
           >
             {badge}
           </motion.div>
@@ -42,9 +42,33 @@ export function ShowcaseSection({ badge, title, description, image, images, imag
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.15 }}
-            className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-5"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 leading-tight"
           >
-            {title}
+            {(() => {
+              if (!title) return null;
+              // Dynamically split title for 2-color effect
+              if (title.includes(" & ")) {
+                const parts = title.split(" & ");
+                return (
+                  <>
+                    {parts[0]} <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">& {parts.slice(1).join(" & ")}</span>
+                  </>
+                );
+              }
+              const words = title.split(" ");
+              if (words.length > 2) {
+                const splitIdx = Math.ceil(words.length / 2);
+                return (
+                  <>
+                    {words.slice(0, splitIdx).join(" ")}{" "}
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+                      {words.slice(splitIdx).join(" ")}
+                    </span>
+                  </>
+                );
+              }
+              return title;
+            })()}
           </motion.h2>
 
           <motion.p
@@ -52,7 +76,7 @@ export function ShowcaseSection({ badge, title, description, image, images, imag
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.25 }}
-            className="text-sm sm:text-base text-gray-300 leading-relaxed"
+            className="text-base sm:text-lg text-gray-300 leading-relaxed font-light"
           >
             {description}
           </motion.p>
