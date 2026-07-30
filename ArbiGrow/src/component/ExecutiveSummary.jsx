@@ -16,41 +16,62 @@ export default function ExecutiveSummary() {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="relative p-4 md:p-12 rounded-3xl bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-xl border border-white/10"
+          className="relative p-6 sm:p-10 md:p-14 rounded-[2.5rem] bg-gradient-to-br from-white/[0.04] to-white/[0.01] backdrop-blur-2xl border border-white/[0.08] shadow-2xl overflow-hidden group"
         >
-          {/* Glow effect */}
-          <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-blue-600/10 to-cyan-600/10 blur-xl"></div>
+          {/* Subtle animated background glow */}
+          <div className="absolute -top-40 -right-40 w-96 h-96 bg-cyan-500/10 rounded-full blur-[100px] pointer-events-none group-hover:bg-cyan-500/20 transition-all duration-1000"></div>
+          <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-blue-500/10 rounded-full blur-[100px] pointer-events-none group-hover:bg-blue-500/20 transition-all duration-1000"></div>
           
-          <div className="relative z-10">
-            <div className="inline-block px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/30 mb-6">
-              <span className="text-sm font-semibold text-blue-400 uppercase tracking-wider">{t("home.executiveSummary.badge")}</span>
-            </div>
+          <div className="relative z-10 flex flex-col md:flex-row gap-8 md:gap-12 items-start">
             
-            <p className="text-[20px] leading-relaxed text-gray-300">
-              {t("home.executiveSummary.paragraph")}
-            </p>
-
-            <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
-              {[
-                { label: t("home.executiveSummary.activities"), value: t("home.executiveSummary.activitiesVal") },
-                { label: t("home.executiveSummary.network"), value: t("home.executiveSummary.networkVal") },
-                { label: t("home.executiveSummary.opportunities"), value: t("home.executiveSummary.opportunitiesVal") },
-                { label: t("home.executiveSummary.goal"), value: t("home.executiveSummary.goalVal") }
-              ].map((item, idx) => (
-                <div
-                  key={idx}
-                  className="text-center px-3 py-4 sm:p-4 rounded-xl bg-white/5 border border-white/10 min-h-[104px] flex flex-col justify-center"
-                >
-                  <div className="text-xs sm:text-sm text-gray-400 mb-1">
-                    {item.label}
-                  </div>
-                  <div className="font-semibold text-[12px] sm:text-[13px] md:text-[14px] text-white leading-tight break-normal">
-                    {item.value}
-                  </div>
+            {/* Left Column: Badge & Text */}
+            <div className="flex-1">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border border-blue-500/20 text-xs uppercase tracking-[0.2em] text-cyan-400 font-semibold mb-4 w-fit">
+                {t("home.executiveSummary.badge")}
+              </div>
+              
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                About <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Oxford Financial Ads</span>
+              </h2>
+              
+              <div className="relative">
+                {/* Decorative Quote Mark */}
+                <div className="absolute -top-6 -left-4 text-7xl text-cyan-500/20 font-serif leading-none select-none pointer-events-none">
+                  "
                 </div>
-              ))}
+                <p className="relative z-10 text-lg sm:text-xl leading-relaxed text-gray-300 font-light text-justify sm:text-left">
+                  {t("home.executiveSummary.paragraph")}
+                </p>
+              </div>
             </div>
+
           </div>
+
+          {/* Bottom Stats/Features Grid */}
+          <div className="relative z-10 mt-12 pt-10 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+            {[
+              { label: t("home.executiveSummary.activities"), value: t("home.executiveSummary.activitiesVal") },
+              { label: t("home.executiveSummary.network"), value: t("home.executiveSummary.networkVal") },
+              { label: t("home.executiveSummary.opportunities"), value: t("home.executiveSummary.opportunitiesVal") },
+              { label: t("home.executiveSummary.goal"), value: t("home.executiveSummary.goalVal") }
+            ].map((item, idx) => (
+              <div
+                key={idx}
+                className="group/stat relative p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-cyan-500/30 hover:bg-white/[0.04] transition-all duration-300 flex flex-col justify-center"
+              >
+                {/* Subtle top accent line on hover */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent group-hover/stat:w-1/2 transition-all duration-500"></div>
+                
+                <div className="text-xs text-cyan-400/80 uppercase tracking-wider mb-2 font-semibold">
+                  {item.label}
+                </div>
+                <div className="font-bold text-sm sm:text-base text-white leading-tight">
+                  {item.value}
+                </div>
+              </div>
+            ))}
+          </div>
+
         </motion.div>
       </div>
     </section>
