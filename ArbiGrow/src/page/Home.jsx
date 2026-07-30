@@ -15,10 +15,24 @@ import { MemberBenefits } from "../component/MemberBenefits";
 import { PlatformStatistics } from "../component/PlatformStatistics.jsx";
 import { ShowcaseSection } from "../component/ShowcaseSection";
 import { getPlatformStats } from "../api/admin.api.js";
-import eventsImg from "../assets/events.jpg";
+import eventsImg1 from "../assets/events.jpg";
+import eventsImg2 from "../assets/events .jpeg";
+import eventsImg3 from "../assets/events2.jpeg";
+import eventsImg4 from "../assets/events3.jpeg";
+import eventsImg5 from "../assets/events4.jpeg";
+import eventsImg6 from "../assets/events5.jpeg";
+import eventsImg7 from "../assets/events6.jpeg";
+import eventsImg8 from "../assets/events7.jpeg";
+import eventsImg9 from "../assets/events8.jpeg";
+import eventsImg10 from "../assets/events9.jpeg";
 import communityImg from "../assets/community.jpg";
 import trainingImg from "../assets/training.jpg";
 import lifeImg from "../assets/life.jpg";
+
+const eventImages = [
+  eventsImg1, eventsImg2, eventsImg3, eventsImg4, eventsImg5,
+  eventsImg6, eventsImg7, eventsImg8, eventsImg9, eventsImg10
+];
 
 const Home = () => {
   const { t } = useTranslation();
@@ -78,7 +92,7 @@ const Home = () => {
         badge={t("showcase.events.badge")}
         title={t("showcase.events.title")}
         description={t("showcase.events.description")}
-        image={eventsImg}
+        images={eventImages}
         imageAlt={t("homePage.imageAlt")}
       />
       <ShowcaseSection

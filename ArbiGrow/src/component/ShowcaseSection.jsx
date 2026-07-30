@@ -1,6 +1,17 @@
-import { motion } from "framer-motion";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
-export function ShowcaseSection({ badge, title, description, image, imageAlt, reversed }) {
+export function ShowcaseSection({ badge, title, description, image, images, imageAlt, reversed }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    if (images && images.length > 1) {
+      const timer = setInterval(() => {
+        setCurrentIndex((prev) => (prev + 1) % images.length);
+      }, 3000);
+      return () => clearInterval(timer);
+    }
+  }, [images]);
   return (
     <motion.section
       initial={{ opacity: 0, y: 30 }}
@@ -56,12 +67,52 @@ export function ShowcaseSection({ badge, title, description, image, imageAlt, re
         >
           <div className="relative group/card">
             <div className="absolute -inset-3 bg-gradient-to-r from-blue-500/15 via-cyan-500/15 to-blue-500/15 rounded-2xl blur-2xl opacity-60 group-hover/card:opacity-80 transition-opacity duration-700" />
-            <img
-              src={image}
-              alt={imageAlt}
-              className="relative w-full h-auto rounded-xl shadow-2xl shadow-blue-500/10 group-hover/card:shadow-blue-500/25 group-hover/card:-translate-y-1 transition-all duration-500 ease-out"
-              loading="lazy"
-            />
+            {images ? (
+              <div className="relative w-full aspect-square sm:aspect-[4/3] lg:aspect-[16/10] rounded-xl overflow-hidden shadow-2xl shadow-blue-500/10 group-hover/card:shadow-blue-500/25 group-hover/card:-translate-y-1 transition-all duration-500 ease-out">
+                <AnimatePresence mode="wait">
+                  <motion.img
+                    key={currentIndex}
+                    src={images[currentIndex]}
+                    alt={`${imageAlt} ${currentIndex + 1}`}
+                    initial={{ opacity: 0, scale: 1.05 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.7 }}
+                    className="absolute inset-0 w-full h-full object-cover object-center"
+                    loading="lazy"
+                  />
+                </AnimatePresence>
+                
+                {/* Gradient overlay for better dot visibility */}
+                <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-slate-900/80 to-transparent z-10 pointer-events-none" />
+
+                {/* Dots indicator */}
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center justify-center gap-2 z-20">
+                  {images.map((_, i) => (
+                    <div
+                      key={i}
+                      role="button"
+                      tabIndex={0}
+                      onClick={() => setCurrentIndex(i)}
+                      onKeyDown={(e) => e.key === 'Enter' && setCurrentIndex(i)}
+                      className={`cursor-pointer shrink-0 rounded-full transition-all duration-300 ${
+                        i === currentIndex 
+                          ? 'bg-cyan-400 h-1.5 w-5 shadow-[0_0_8px_rgba(34,211,238,0.8)]' 
+                          : 'bg-white/50 h-1.5 w-1.5 hover:bg-white hover:scale-125'
+                      }`}
+                      aria-label={`Go to slide ${i + 1}`}
+                    />
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <img
+                src={image}
+                alt={imageAlt}
+                className="relative w-full h-auto rounded-xl shadow-2xl shadow-blue-500/10 group-hover/card:shadow-blue-500/25 group-hover/card:-translate-y-1 transition-all duration-500 ease-out"
+                loading="lazy"
+              />
+            )}
           </div>
         </motion.div>
       </div>
