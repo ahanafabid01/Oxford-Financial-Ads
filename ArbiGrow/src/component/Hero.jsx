@@ -3,7 +3,7 @@ import { Zap, ArrowRight } from "lucide-react";
 import Button from "./Button";
 import { useNavigate } from "react-router";
 import useUserStore from "../store/userStore";
-import heroBg from "../assets/hero-bg.jpg";
+import heroBg from "../assets/hero-bg.jpeg";
 
 export const Hero = () => {
   const { t } = useTranslation();
