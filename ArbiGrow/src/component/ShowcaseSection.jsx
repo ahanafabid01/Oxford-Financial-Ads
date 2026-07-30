@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-export function ShowcaseSection({ badge, title, description, image, images, imageAlt, reversed }) {
+export function ShowcaseSection({ badge, badgeIcon: BadgeIcon, title, description, image, images, imageAlt, reversed }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -34,6 +34,7 @@ export function ShowcaseSection({ badge, title, description, image, images, imag
             transition={{ duration: 0.6, delay: 0.1 }}
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rose-500/10 border border-rose-500/20 text-xs uppercase tracking-[0.2em] text-rose-400 font-semibold mb-6 w-fit"
           >
+            {BadgeIcon && <BadgeIcon className="w-4 h-4" />}
             {badge}
           </motion.div>
 
@@ -107,11 +108,24 @@ export function ShowcaseSection({ badge, title, description, image, images, imag
                   />
                 </AnimatePresence>
                 
-                {/* Gradient overlay for better dot visibility */}
-                <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-slate-900/80 to-transparent z-10 pointer-events-none" />
+                {/* Gradient overlay for better dot visibility and text */}
+                <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-slate-900/90 to-transparent z-10 pointer-events-none" />
+
+                {/* Index and Title Overlay */}
+                <div className="absolute bottom-5 left-5 z-20 flex flex-col pointer-events-none">
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-rose-400 to-orange-400 drop-shadow-sm">
+                      {String(currentIndex + 1).padStart(2, '0')}
+                    </span>
+                    <span className="text-lg">✨</span>
+                  </div>
+                  <span className="text-white/90 font-medium text-sm md:text-base mt-0.5 drop-shadow-md capitalize">
+                    {badge.toLowerCase()}
+                  </span>
+                </div>
 
                 {/* Dots indicator */}
-                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center justify-center gap-2 z-20">
+                <div className="absolute bottom-5 right-5 flex flex-wrap items-center justify-end gap-1.5 z-20 max-w-[50%]">
                   {images.map((_, i) => (
                     <div
                       key={i}
@@ -130,12 +144,30 @@ export function ShowcaseSection({ badge, title, description, image, images, imag
                 </div>
               </div>
             ) : (
-              <img
-                src={image}
-                alt={imageAlt}
-                className="relative w-full h-auto rounded-xl shadow-2xl shadow-rose-500/10 group-hover/card:shadow-rose-500/25 group-hover/card:-translate-y-1 transition-all duration-500 ease-out"
-                loading="lazy"
-              />
+              <div className="relative w-full rounded-xl overflow-hidden shadow-2xl shadow-rose-500/10 group-hover/card:shadow-rose-500/25 group-hover/card:-translate-y-1 transition-all duration-500 ease-out">
+                <img
+                  src={image}
+                  alt={imageAlt}
+                  className="w-full h-auto block"
+                  loading="lazy"
+                />
+                
+                {/* Gradient overlay */}
+                <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-slate-900/90 to-transparent z-10 pointer-events-none" />
+
+                {/* Index and Title Overlay for single image */}
+                <div className="absolute bottom-5 left-5 z-20 flex flex-col pointer-events-none">
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-rose-400 to-orange-400 drop-shadow-sm">
+                      01
+                    </span>
+                    <span className="text-lg">✨</span>
+                  </div>
+                  <span className="text-white/90 font-medium text-sm md:text-base mt-0.5 drop-shadow-md capitalize">
+                    {badge.toLowerCase()}
+                  </span>
+                </div>
+              </div>
             )}
           </div>
         </motion.div>

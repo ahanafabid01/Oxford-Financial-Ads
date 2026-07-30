@@ -15,6 +15,7 @@ import { MemberBenefits } from "../component/MemberBenefits";
 import { PlatformStatistics } from "../component/PlatformStatistics.jsx";
 import { ShowcaseSection } from "../component/ShowcaseSection";
 import { getPlatformStats } from "../api/admin.api.js";
+import { PartyPopper, Users, GraduationCap, Briefcase } from "lucide-react";
 import eventsImg1 from "../assets/events.jpg";
 import eventsImg2 from "../assets/events .jpeg";
 import eventsImg3 from "../assets/events2.jpeg";
@@ -110,6 +111,7 @@ const Home = () => {
       </div>
       <ShowcaseSection
         badge={t("showcase.events.badge")}
+        badgeIcon={PartyPopper}
         title={t("showcase.events.title")}
         description={t("showcase.events.description")}
         images={eventImages}
@@ -117,6 +119,7 @@ const Home = () => {
       />
       <ShowcaseSection
         badge={t("showcase.community.badge")}
+        badgeIcon={Users}
         title={t("showcase.community.title")}
         description={t("showcase.community.description")}
         images={communityImages}
@@ -125,6 +128,7 @@ const Home = () => {
       />
       <ShowcaseSection
         badge={t("showcase.training.badge")}
+        badgeIcon={GraduationCap}
         title={t("showcase.training.title")}
         description={t("showcase.training.description")}
         images={trainingImages}
@@ -132,6 +136,7 @@ const Home = () => {
       />
       <ShowcaseSection
         badge={t("showcase.life.badge")}
+        badgeIcon={Briefcase}
         title={t("showcase.life.title")}
         description={t("showcase.life.description")}
         image={lifeImg}
