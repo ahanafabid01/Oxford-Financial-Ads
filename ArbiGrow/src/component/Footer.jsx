@@ -111,7 +111,7 @@ export default function Footer() {
                   <span className="block text-sm mb-1">{t("footer.officialEmail")}</span>
                   <a
                     href="mailto:support.oxfordfinancialads@gmail.com"
-                    className="text-cyan-400 hover:text-cyan-300 text-sm"
+                    className="text-cyan-400 hover:text-cyan-300 text-sm break-all"
                   >
                     {t("footer.supportEmail")}
                   </a>
