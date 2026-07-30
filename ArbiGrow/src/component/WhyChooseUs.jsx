@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Keyboard, Eye, Database, Palette, Film, Megaphone, Globe, Award } from 'lucide-react';
+import { Keyboard, Eye, Database, Palette, Film, Megaphone, Globe, Award, Store } from 'lucide-react';
 import { useTranslation } from "react-i18next";
 
 export function WhyChooseUs() {
@@ -45,6 +45,11 @@ export function WhyChooseUs() {
       title: t("home.whyChooseUs.benefitsTitle"),
       description: t("home.whyChooseUs.benefitsDesc"),
     },
+    {
+      icon: Store,
+      title: t("home.whyChooseUs.ecommerceTitle"),
+      description: t("home.whyChooseUs.ecommerceDesc"),
+    },
   ];
 
   return (
@@ -76,7 +81,7 @@ export function WhyChooseUs() {
         </motion.div>
 
         {/* Features Grid */}
-        <div className="grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-3">
   {features.map((feature, index) => (
     <motion.div
       key={index}
