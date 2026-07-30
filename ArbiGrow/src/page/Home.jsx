@@ -25,13 +25,33 @@ import eventsImg7 from "../assets/events6.jpeg";
 import eventsImg8 from "../assets/events7.jpeg";
 import eventsImg9 from "../assets/events8.jpeg";
 import eventsImg10 from "../assets/events9.jpeg";
-import communityImg from "../assets/community.jpg";
-import trainingImg from "../assets/training.jpg";
+
+import com1 from "../assets/community and team/team.jpeg";
+import com2 from "../assets/community and team/team2.jpeg";
+import com3 from "../assets/community and team/team3.jpeg";
+import com4 from "../assets/community and team/team4.jpeg";
+import com5 from "../assets/community and team/team5.jpeg";
+import com6 from "../assets/community and team/team6.jpeg";
 import lifeImg from "../assets/life.jpg";
+
+import train1 from "../assets/training and development/training.jpeg";
+import train2 from "../assets/training and development/training2.jpeg";
+import train3 from "../assets/training and development/training 3.jpeg";
+import train4 from "../assets/training and development/training4.jpeg";
+import train5 from "../assets/training and development/training5.jpeg";
+import train6 from "../assets/training and development/training6.jpeg";
 
 const eventImages = [
   eventsImg1, eventsImg2, eventsImg3, eventsImg4, eventsImg5,
   eventsImg6, eventsImg7, eventsImg8, eventsImg9, eventsImg10
+];
+
+const trainingImages = [
+  train1, train2, train3, train4, train5, train6
+];
+
+const communityImages = [
+  com1, com2, com3, com4, com5, com6
 ];
 
 const Home = () => {
@@ -99,7 +119,7 @@ const Home = () => {
         badge={t("showcase.community.badge")}
         title={t("showcase.community.title")}
         description={t("showcase.community.description")}
-        image={communityImg}
+        images={communityImages}
         imageAlt={t("homePage.imageAlt")}
         reversed
       />
@@ -107,7 +127,7 @@ const Home = () => {
         badge={t("showcase.training.badge")}
         title={t("showcase.training.title")}
         description={t("showcase.training.description")}
-        image={trainingImg}
+        images={trainingImages}
         imageAlt={t("homePage.imageAlt")}
       />
       <ShowcaseSection
