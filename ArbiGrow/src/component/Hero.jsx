@@ -28,8 +28,8 @@ export const Hero = () => {
           />
           {/* White gradient at TOP — fully opaque white fading into image */}
           <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-white to-transparent pointer-events-none" />
-          {/* Dark gradient at BOTTOM — matches site bg #0A122C */}
-          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0A122C] to-transparent pointer-events-none" />
+          {/* Dark gradient at BOTTOM — matches site bg */}
+          <div className="absolute -bottom-1 left-0 right-0 h-48 bg-gradient-to-t from-dark-bg via-dark-bg/80 to-transparent pointer-events-none" />
         </div>
 
         {/* Text section — transparent, pulled up 2px to close subpixel gap */}
