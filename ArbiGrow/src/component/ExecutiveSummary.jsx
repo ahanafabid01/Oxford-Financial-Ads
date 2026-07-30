@@ -39,7 +39,7 @@ export default function ExecutiveSummary() {
                 <div className="absolute -top-6 -left-4 text-7xl text-cyan-500/20 font-serif leading-none select-none pointer-events-none">
                   "
                 </div>
-                <p className="relative z-10 text-lg sm:text-xl leading-relaxed text-gray-300 font-light text-justify sm:text-left">
+                <p className="relative z-10 text-base sm:text-lg md:text-xl leading-relaxed text-gray-300 font-light text-left">
                   {t("home.executiveSummary.paragraph")}
                 </p>
               </div>
