@@ -100,7 +100,7 @@ const Home = () => {
       </div>
 
       {/* Commitment Hero Image */}
-      <div className="flex justify-center my-12 md:my-16 px-4 md:px-8">
+      <div className="flex justify-center my-6 md:my-8 px-4 md:px-8">
         <div className="relative group max-w-6xl w-full">
           {/* Subtle glow effect */}
           <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/15 via-blue-500/15 to-cyan-500/15 rounded-3xl blur-xl opacity-60 group-hover:opacity-100 transition duration-1000 group-hover:duration-500"></div>

@@ -18,7 +18,7 @@ export function ShowcaseSection({ badge, badgeIcon: BadgeIcon, title, descriptio
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
-      className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-white/[0.04] to-white/[0.01] backdrop-blur-xl border border-white/[0.08] p-5 sm:p-8 lg:p-10 my-8 md:my-12 group hover:border-white/20 transition-all duration-500"
+      className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-white/[0.04] to-white/[0.01] backdrop-blur-xl border border-white/[0.08] p-5 sm:p-8 lg:p-10 my-4 md:my-6 group hover:border-white/20 transition-all duration-500"
     >
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 -left-20 w-72 h-72 bg-rose-500/5 rounded-full blur-3xl" />
