@@ -64,27 +64,30 @@ export default function Footer() {
             <div>
               <h3 className="font-bold mb-4">{t("footer.legal")}</h3>
               <ul className="space-y-3">
-                <li onClick={() => navigate("/terms-conditions")}>
+                <li>
                   <a
-                    href="#"
+                    href="/terms-conditions"
+                    onClick={(e) => { e.preventDefault(); navigate("/terms-conditions"); }}
                     className="text-gray-400 hover:text-cyan-400 transition-colors duration-300 flex items-center gap-2"
                   >
                     <FileText className="w-4 h-4" />
                     {t("footer.terms")}
                   </a>
                 </li>
-                <li onClick={() => navigate("/privacy-policy")}>
+                <li>
                   <a
-                    href="#"
+                    href="/privacy-policy"
+                    onClick={(e) => { e.preventDefault(); navigate("/privacy-policy"); }}
                     className="text-gray-400 hover:text-cyan-400 transition-colors duration-300 flex items-center gap-2"
                   >
                     <Shield className="w-4 h-4" />
                     {t("footer.privacy")}
                   </a>
                 </li>
-                <li onClick={() => navigate("/legal-information")}>
+                <li>
                   <a
-                    href="#"
+                    href="/legal-information"
+                    onClick={(e) => { e.preventDefault(); navigate("/legal-information"); }}
                     className="text-gray-400 hover:text-cyan-400 transition-colors duration-300 flex items-center gap-2"
                   >
                     <FileText className="w-4 h-4" />
