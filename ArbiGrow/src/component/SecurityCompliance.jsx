@@ -81,14 +81,6 @@ export function SecurityCompliance() {
           ))}
         </div>
 
-        {/* Commitment Divider Image */}
-        <div className="flex justify-center my-8 md:my-12">
-          <img
-            src="/WhatsApp%20Image%202026-06-24%20at%2021.09.06.jpeg"
-            alt={t("homePage.altOurCommitment")}
-            className="w-full max-w-3xl md:max-w-4xl lg:max-w-5xl h-auto object-contain rounded-2xl"
-          />
-        </div>
 
         {/* Commitment Statement */}
         <motion.div

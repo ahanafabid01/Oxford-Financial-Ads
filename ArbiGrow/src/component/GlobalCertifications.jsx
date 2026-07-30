@@ -105,7 +105,7 @@ export function GlobalCertifications() {
         </motion.div>
 
         {/* Certification Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-5 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6 mb-16">
           {certifications.map((item, index) => (
             <motion.div
               key={index}
