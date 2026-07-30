@@ -1054,8 +1054,8 @@
     "section2Desc": "All strategy executions are governed by audited smart contracts deployed on Arbitrum Layer-2. Automated protocols handle trade execution, position management, and rebalancing according to algorithmic parameters without human intervention or discretionary control.",
     "section3Title": "Complete Wallet Control",
     "section3Desc": "Your connected wallet retains withdrawal rights at all times. You can disconnect, withdraw partial or full balances, and exit strategies according to smart contract parameters. No lock-up periods or withdrawal restrictions beyond standard blockchain confirmation times.",
-    "section4Title": "Market Risk Disclosure",
-    "section4Desc": "All projected performance scenarios are simulations based on historical data and algorithmic models. Past performance does not guarantee future results. Cryptocurrency markets are highly volatile and involve substantial risk of loss. Only allocate capital you can afford to lose.",
+    "section4Title": "Advertising Policy",
+    "section4Desc": "We never guarantee sales, revenue, or business growth based on our advertising services. We also do not make any promises or guarantees based on past performance or previous growth.\n\nHowever, we are committed to promoting your products or brand and maximizing their visibility by reaching millions of potential customers worldwide through our advertising platform.\n\nWe Promote Your Brand. The Market Determines the Results.",
     "featuresTitle": "Additional Features",
     "feature1Title": "Smart Selection",
     "feature1Desc": "View the maximum possible profit per package — e.g., a $100 package progress bar shows 0 to $150.",
@@ -1065,8 +1065,8 @@
     "feature3Desc": "Each package has a badge or medal based on its name — e.g., $10 = 'Micro', $100,000 = 'Sovereign'.",
     "feature4Title": "Expiry & Lock",
     "feature4Desc": "When profit reaches 150%, the package card shows Expired and the withdrawal button is locked until a new package is purchased.",
-    "legalNotice": "Legal Notice",
-    "legalNoticeDesc": "Oxford Financial Ads provides algorithmic trading infrastructure and does not offer investment advice, financial planning, or portfolio management services. This platform is intended for sophisticated users who understand blockchain technology and cryptocurrency market risks. Participation constitutes acceptance of all inherent smart contract, market, technological, and regulatory risks. Consult independent legal, tax, and financial advisors before participating."
+    "legalNotice": "Market Risk Disclosure",
+    "legalNoticeDesc": "Oxford Financial Ads (OFA) is committed to transparency, responsible participation, and sustainable platform growth.\n\nAll earnings, rewards, and business opportunities available on this platform depend on user activity, eligibility, platform policies, and market conditions. Past performance or previous results do not guarantee future outcomes.\n\nDigital advertising, e-commerce, cryptocurrency, and online financial activities involve market fluctuations and financial risk. Every user is encouraged to carefully evaluate all opportunities and participate responsibly.\n\nBefore using any OFA services, please read our Terms & Conditions, Risk Policy, and Privacy Policy carefully.\n\nMake Informed Decisions. Manage Risk Responsibly. Build Your Future with Confidence."
   },
   "dailyTasks": {
     "title": "Captcha Typing",

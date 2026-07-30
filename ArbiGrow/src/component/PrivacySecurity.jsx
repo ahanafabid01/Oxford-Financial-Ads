@@ -131,7 +131,7 @@ export function PrivacySecurity() {
                     <h3 className="text-lg font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors duration-300">
                       {item.title}
                     </h3>
-                    <p className="text-sm text-gray-400 leading-relaxed">
+                    <p className="text-sm text-gray-400 leading-relaxed whitespace-pre-wrap">
                       {item.description}
                     </p>
                   </div>
@@ -188,7 +188,7 @@ export function PrivacySecurity() {
               <p className="text-sm font-semibold text-amber-300 mb-2">
                 {t("privacySecurity.legalNotice")}
               </p>
-              <p className="text-xs text-gray-400 leading-relaxed">
+              <p className="text-xs text-gray-400 leading-relaxed whitespace-pre-wrap">
                 {t("privacySecurity.legalNoticeDesc")}
               </p>
             </div>
