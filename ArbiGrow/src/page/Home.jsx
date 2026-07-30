@@ -17,6 +17,7 @@ import { ShowcaseSection } from "../component/ShowcaseSection";
 import { getPlatformStats } from "../api/admin.api.js";
 import { PartyPopper, Users, GraduationCap, Briefcase } from "lucide-react";
 import eventsImg1 from "../assets/events.jpg";
+import commitmentHeroImg from "../assets/commitment-hero.jpeg";
 import eventsImg2 from "../assets/events .jpeg";
 import eventsImg3 from "../assets/events2.jpeg";
 import eventsImg4 from "../assets/events3.jpeg";
@@ -97,6 +98,22 @@ const Home = () => {
       <div id="commitment">
         <SecurityCompliance />
       </div>
+
+      {/* Commitment Hero Image */}
+      <div className="flex justify-center my-12 md:my-16 px-4 md:px-8">
+        <div className="relative group max-w-6xl w-full">
+          {/* Subtle glow effect */}
+          <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/15 via-blue-500/15 to-cyan-500/15 rounded-3xl blur-xl opacity-60 group-hover:opacity-100 transition duration-1000 group-hover:duration-500"></div>
+          
+          <img
+            src={commitmentHeroImg}
+            alt="Global Certifications & Commitment"
+            className="relative w-full h-auto object-cover rounded-2xl border border-white/10 shadow-2xl shadow-black/50"
+            loading="lazy"
+          />
+        </div>
+      </div>
+
       <div id="certifications">
         <GlobalCertifications />
       </div>
