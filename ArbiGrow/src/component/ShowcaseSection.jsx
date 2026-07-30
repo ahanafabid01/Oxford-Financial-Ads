@@ -8,7 +8,7 @@ export function ShowcaseSection({ badge, badgeIcon: BadgeIcon, title, descriptio
     if (images && images.length > 1) {
       const timer = setInterval(() => {
         setCurrentIndex((prev) => (prev + 1) % images.length);
-      }, 3000);
+      }, 5000);
       return () => clearInterval(timer);
     }
   }, [images]);
