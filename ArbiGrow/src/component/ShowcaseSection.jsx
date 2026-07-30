@@ -21,8 +21,8 @@ export function ShowcaseSection({ badge, title, description, image, images, imag
       className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-white/[0.04] to-white/[0.01] backdrop-blur-xl border border-white/[0.08] p-5 sm:p-8 lg:p-10 my-8 md:my-12 group hover:border-white/20 transition-all duration-500"
     >
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 -left-20 w-72 h-72 bg-blue-500/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 -right-20 w-72 h-72 bg-cyan-500/5 rounded-full blur-3xl" />
+        <div className="absolute top-1/4 -left-20 w-72 h-72 bg-rose-500/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 -right-20 w-72 h-72 bg-orange-500/5 rounded-full blur-3xl" />
       </div>
 
       <div className={`relative z-10 flex flex-col ${reversed ? "lg:flex-row-reverse" : "lg:flex-row"} items-center gap-6 sm:gap-8 lg:gap-12`}>
@@ -32,7 +32,7 @@ export function ShowcaseSection({ badge, title, description, image, images, imag
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border border-blue-500/20 text-xs uppercase tracking-[0.2em] text-cyan-400 font-semibold mb-6 w-fit"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rose-500/10 border border-rose-500/20 text-xs uppercase tracking-[0.2em] text-rose-400 font-semibold mb-6 w-fit"
           >
             {badge}
           </motion.div>
@@ -51,7 +51,7 @@ export function ShowcaseSection({ badge, title, description, image, images, imag
                 const parts = title.split(" & ");
                 return (
                   <>
-                    {parts[0]} <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">& {parts.slice(1).join(" & ")}</span>
+                    {parts[0]} & <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-rose-400 to-orange-400">{parts.slice(1).join(" & ")}</span>
                   </>
                 );
               }
@@ -61,7 +61,7 @@ export function ShowcaseSection({ badge, title, description, image, images, imag
                 return (
                   <>
                     {words.slice(0, splitIdx).join(" ")}{" "}
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-rose-400 to-orange-400">
                       {words.slice(splitIdx).join(" ")}
                     </span>
                   </>
@@ -90,9 +90,9 @@ export function ShowcaseSection({ badge, title, description, image, images, imag
           className="flex-1 w-full"
         >
           <div className="relative group/card">
-            <div className="absolute -inset-3 bg-gradient-to-r from-blue-500/15 via-cyan-500/15 to-blue-500/15 rounded-2xl blur-2xl opacity-60 group-hover/card:opacity-80 transition-opacity duration-700" />
+            <div className="absolute -inset-3 bg-gradient-to-r from-pink-500/15 via-rose-500/15 to-orange-500/15 rounded-2xl blur-2xl opacity-60 group-hover/card:opacity-80 transition-opacity duration-700" />
             {images ? (
-              <div className="relative w-full aspect-square sm:aspect-[4/3] lg:aspect-[16/10] rounded-xl overflow-hidden shadow-2xl shadow-blue-500/10 group-hover/card:shadow-blue-500/25 group-hover/card:-translate-y-1 transition-all duration-500 ease-out">
+              <div className="relative w-full aspect-square sm:aspect-[4/3] lg:aspect-[16/10] rounded-xl overflow-hidden shadow-2xl shadow-rose-500/10 group-hover/card:shadow-rose-500/25 group-hover/card:-translate-y-1 transition-all duration-500 ease-out">
                 <AnimatePresence mode="wait">
                   <motion.img
                     key={currentIndex}
@@ -121,7 +121,7 @@ export function ShowcaseSection({ badge, title, description, image, images, imag
                       onKeyDown={(e) => e.key === 'Enter' && setCurrentIndex(i)}
                       className={`cursor-pointer shrink-0 rounded-full transition-all duration-300 ${
                         i === currentIndex 
-                          ? 'bg-cyan-400 h-1.5 w-5 shadow-[0_0_8px_rgba(34,211,238,0.8)]' 
+                          ? 'bg-rose-400 h-1.5 w-5 shadow-[0_0_8px_rgba(251,113,133,0.8)]' 
                           : 'bg-white/50 h-1.5 w-1.5 hover:bg-white hover:scale-125'
                       }`}
                       aria-label={`Go to slide ${i + 1}`}
@@ -133,7 +133,7 @@ export function ShowcaseSection({ badge, title, description, image, images, imag
               <img
                 src={image}
                 alt={imageAlt}
-                className="relative w-full h-auto rounded-xl shadow-2xl shadow-blue-500/10 group-hover/card:shadow-blue-500/25 group-hover/card:-translate-y-1 transition-all duration-500 ease-out"
+                className="relative w-full h-auto rounded-xl shadow-2xl shadow-rose-500/10 group-hover/card:shadow-rose-500/25 group-hover/card:-translate-y-1 transition-all duration-500 ease-out"
                 loading="lazy"
               />
             )}
