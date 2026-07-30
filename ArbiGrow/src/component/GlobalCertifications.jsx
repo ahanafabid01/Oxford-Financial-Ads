@@ -69,7 +69,7 @@ export function GlobalCertifications() {
 
   return (
     <>
-    <section className="relative py-24 px-2 sm:px-4 overflow-hidden">
+    <section className="relative py-8 md:py-12 px-2 sm:px-4 overflow-hidden">
       {/* Background decorations */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 left-10 w-[600px] h-[600px] bg-blue-500/3 rounded-full blur-3xl"></div>

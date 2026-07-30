@@ -969,6 +969,9 @@
     },
     "platformStats": {
       "badge": "Live Platform Statistics",
+      "title": "Oxford Financial Ads",
+      "titleHighlight": "Live Statistics",
+      "subtitle": "Real-time transparency into our global network, active memberships, and successful financial engagements.",
       "totalUsers": "Total Users",
       "totalActiveInvestors": "Total Active Investors",
       "totalInvestmentsMade": "Total Investments Made",

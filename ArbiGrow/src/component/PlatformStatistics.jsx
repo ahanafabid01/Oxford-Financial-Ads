@@ -26,7 +26,7 @@ export function PlatformStatistics({ stats }) {
   };
 
   return (
-    <section className="relative py-20 px-2 sm:px-4">
+    <section className="relative py-8 md:py-12 px-2 sm:px-4">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <motion.div
@@ -42,6 +42,16 @@ export function PlatformStatistics({ stats }) {
               {t("home.platformStats.badge")}
             </span>
           </div>
+          
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+            {t("home.platformStats.title")}{" "}
+            <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+              {t("home.platformStats.titleHighlight")}
+            </span>
+          </h2>
+          <p className="text-gray-400 text-lg max-w-full md:max-w-3xl mx-auto px-2">
+            {t("home.platformStats.subtitle")}
+          </p>
         </motion.div>
 
         {/* Statistics Grid */}
