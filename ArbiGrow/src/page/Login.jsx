@@ -4,7 +4,7 @@ import Navbar from "../component/Navbar";
 import { loginUser } from "../api/auth.api";
 import useUserStore from "../store/userStore";
 import { useNavigate } from "react-router";
-import { Eye, EyeOff } from "lucide-react";
+import { Eye, EyeOff, CircleUser } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import loginImg from "../assets/login.jpeg";
 
@@ -119,8 +119,8 @@ export default function LoginForm() {
 
             {/* Header */}
             <div className="flex flex-col items-center mb-8">
-              <div className="w-12 h-12 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-white text-2xl shadow-lg shadow-blue-500/10 hover:shadow-blue-500/40 hover:scale-105 transition-all duration-300">
-                👤
+              <div className="w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br from-blue-500/20 to-cyan-500/20 border border-white/10 text-cyan-400 shadow-[0_0_15px_rgba(34,211,238,0.2)] hover:shadow-[0_0_25px_rgba(34,211,238,0.4)] hover:scale-105 transition-all duration-300">
+                <CircleUser size={30} strokeWidth={1.5} />
               </div>
               <h2 className="text-xl text-white font-semibold mt-3">
                 {t("auth.login.title")}

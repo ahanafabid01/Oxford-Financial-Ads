@@ -4,7 +4,7 @@ import Navbar from "../component/Navbar";
 import Button from "../component/Button";
 import { registerUser } from "../api/auth.api.js";
 import { Link, useNavigate, useSearchParams } from "react-router";
-import { CheckCircle2, Circle, Eye, EyeOff } from "lucide-react";
+import { CheckCircle2, Circle, Eye, EyeOff, Rocket } from "lucide-react";
 import api from "../api/axiosInstance.js";
 import { useTranslation } from "react-i18next";
 import loginImg from "../assets/login.jpeg";
@@ -248,8 +248,8 @@ export default function RegisterForm() {
           {/* ── RIGHT/BOTTOM: Form Panel ─────────────────────────── */}
           <div className="w-full lg:w-7/12 xl:w-3/5 bg-white/5 backdrop-blur-sm p-4 sm:p-8 flex flex-col justify-start max-h-[85vh] lg:max-h-[90vh] overflow-y-auto custom-scrollbar">
             <div className="text-center mb-8">
-              <div className="w-12 h-12 mx-auto flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-white text-2xl shadow-lg shadow-blue-500/10 hover:shadow-blue-500/40 hover:scale-105 transition-all duration-300 mb-4">
-                🚀
+              <div className="w-14 h-14 mx-auto flex items-center justify-center rounded-full bg-gradient-to-br from-blue-500/20 to-cyan-500/20 border border-white/10 text-cyan-400 shadow-[0_0_15px_rgba(34,211,238,0.2)] hover:shadow-[0_0_25px_rgba(34,211,238,0.4)] hover:scale-105 transition-all duration-300 mb-4">
+                <Rocket size={28} strokeWidth={1.5} />
               </div>
               <h1 className="text-2xl sm:text-3xl font-bold text-white">{t("auth.register.title")}</h1>
               <p className="text-gray-400 mt-2 text-sm">{t("auth.register.subtitle")}</p>
